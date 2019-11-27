@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if cat $1 | head -1 | grep -E '^\[[[:alnum:]-]*\]\s*$' --quiet; then
+  echo "Aborting because of empty message"
+  exit 1
+fi

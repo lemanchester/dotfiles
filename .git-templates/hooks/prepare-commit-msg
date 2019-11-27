@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Do not prepend if there is already a feature number
+if cat $1 | head -1 | grep -e '^\[' --quiet; then
+  exit 0
+fi
+FEATURE_NUMBER=$(git rev-parse --abbrev-ref HEAD | sed -E -n "s/^([a-zA-Z]+)-([0-9]+).*$/[\1-\2]/p" | tr '[:lower:]' '[:upper:]')
+echo "$FEATURE_NUMBER $(cat $1)" > $1

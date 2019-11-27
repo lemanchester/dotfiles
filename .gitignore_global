@@ -1,0 +1,7 @@
+.rbenv-gemset
+.ruby-version
+.DS_Store
+.idea/*
+.vscode/*
+
+

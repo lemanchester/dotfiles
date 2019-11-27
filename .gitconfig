@@ -1,0 +1,52 @@
+[user]
+  name = Lennon Manchester
+  email = le.manchester@gmail.com
+[color]
+  interactive = auto
+  ui = auto
+
+[core]
+  excludesfile = ~/.gitignore_global
+	editor = nvim
+
+[alias]
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+  st = status
+  ci = commit
+  ad = add
+  ps = push
+  br = branch
+  co = checkout
+  df = diff
+  dff = diff
+  l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  s = status -s
+  d = diff --patch-with-stat
+  branches = branch -a
+  remotes = remote -v
+
+[push]
+  default = current
+  followTags = true
+
+[branch]
+  autosetuprebase = always
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan bold
+
+[init]
+  templatedir = ~/.git-templates

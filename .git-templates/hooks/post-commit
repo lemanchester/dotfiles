@@ -1,0 +1,13 @@
+#!/bin/sh
+
+SHA=$(git log -1 --format=format:"%H" | tr /a-f/ /A-F/)
+EQL=$(echo ${SHA:0:20}==${SHA:20:20} | sed 's/\([0-9A-F]\)/\1+/g' | sed 's/+$//' | sed 's/+=/=/' | awk '{print "obase=16; " $0}' | bc)
+
+if [ "$EQL" == "1" ]; then
+  echo
+  echo '  ******************************'
+  echo '  *     Yay! Lucky commit!     *'
+  echo '  ******************************'
+  echo
+fi
+
